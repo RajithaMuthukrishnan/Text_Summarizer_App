@@ -3,7 +3,7 @@
 {% block page_content %}
 <!DOCTYPE html>
 <html lang="en">
-    <body class="bg-sky-50 font-montserrat">
+    <body class="bg-sky-50 font-montserrat h-screen">
         <div id="title-card" class="bg-gradient-to-r from-sky-300 to-sky-100 border border-sky-100 rounded-sm">
             <div id="title-text" class="text-indigo-900 text-6xl text-center my-6">
                 <h1>TL;DR</h1>
@@ -11,10 +11,19 @@
                     Too Long Didn't Read? Let us summarize and get you going!
                 </h1>
             </div>
-        </div id="content">
-
-        <div>
-
+        </div>
+        <div id="content" class="m-2 h-3/4 border border-black">
+            <div id="content-divider" class="h-full grid grid-cols-2">
+                <form id="summarize" action="" method="get">
+                    <textarea type="text"class="mx-2 my-4 pb-96 w-11/12 border border-black overflow-y-auto break-words"></textarea>
+                    <div class="flex justify-center">
+                        <input type="submit" class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded">
+                    </div> 
+                </form>
+                <form id="summary" action="" method="post">
+                    <textarea type="text"class="mx-2 my-4 pb-96 w-11/12 border border-black overflow-y-auto break-words"></textarea>
+                </form>
+            </div>
         </div>
     </body>
 </html>
