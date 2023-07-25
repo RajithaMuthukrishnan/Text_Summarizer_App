@@ -14,15 +14,15 @@
         </div>
         <div id="content" class="m-2 h-3/4 border border-black">
             <div id="content-divider" class="h-full grid grid-cols-2">
-                <form id="summarize" action="" method="get">
-                    <textarea type="text"class="mx-2 my-4 pb-96 w-11/12 border border-black overflow-y-auto break-words"></textarea>
+                <form id="summarize" action="{% url 'submit_data' %}" method="post">{% csrf_token %}
+                    <textarea name="doc_text_area" type="text" class="mx-2 my-4 pb-96 w-11/12 border border-black overflow-y-auto break-words">{{text_data}}</textarea>
                     <div class="flex justify-center">
-                        <input type="submit" class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded">
+                        <button type="submit" class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded">{{button_text}}</button>
                     </div> 
                 </form>
-                <form id="summary" action="" method="post">
-                    <textarea type="text"class="mx-2 my-4 pb-96 w-11/12 border border-black overflow-y-auto break-words"></textarea>
-                </form>
+                <div id="summary">
+                    <textarea type="text"class="mx-2 my-4 pb-96 w-11/12 border border-black overflow-y-auto break-words">{{summary}}</textarea>
+                </div>
             </div>
         </div>
     </body>

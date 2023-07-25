@@ -18,6 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+CSRF_COOKIE_SECURE = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-j0b7ped$t)e@j!yv*r*y@bwm5skr3z&!7as)+pfn$zu)zxvb!o"
