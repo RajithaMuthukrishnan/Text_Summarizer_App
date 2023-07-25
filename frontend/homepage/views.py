@@ -19,8 +19,8 @@ def get_data(request):
     global button_text
     if (button_text=='Submit' and request.method == 'POST'):
         text_data = request.POST['doc_text_area'] 
-        # summary = predict(text_data)[0]
-        summary = ['Yeayyyyyyy its working!!!'][0]
+        summary = predict(text_data)[0]
+        # summary = ['Yeayyyyyyy its working!!!'][0]
         button_text = "Clear"
         context = {
             'text_data': text_data,
@@ -33,7 +33,7 @@ def get_data(request):
         return HttpResponseRedirect(reverse('homepage'))
 
 def predict(text_data):
-    print('Predicting......')
+    print('Predicting...')
     inputs = apps.get_app_config('homepage').tokenizer(
         text_data,
         padding='max_length',
