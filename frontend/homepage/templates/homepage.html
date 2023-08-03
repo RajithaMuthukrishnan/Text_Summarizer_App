@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+    <body class="bg-cyan-50 font-montserrat h-screen">
+        <div id="title-card" class="bg-gradient-to-r from-cyan-800 to-cyan-600 border border-sky-100 rounded-sm">
+            <div id="title-text" class="text-blue-50 text-6xl text-center my-6">
+                <h1>TL;DR</h1>
+                <h1 class="text-xl mt-4">
+                    Too Long Didn't Read? Let's summarize and get you going!
+                </h1>
+                <h2 class="text-base text-red-200 italic mt-4">
+                    This tool abstracts instructions-based text and delivers the commands to be executed. Please note that the model development is ongoing and may not produce highly accurate results.
+                </h2>
+            </div>
+        </div>
+        <div id="content" class="h-3/4 border">
+            <div id="content-divider" class="h-full grid grid-cols-2">
+                <form id="summarize" action="{% url 'submit_data' %}" method="post">{% csrf_token %}
+                    <textarea name="doc_text_area" type="text" placeholder="Enter text here" class="mx-2 my-4 pb-96 w-11/12 border border-gray-400 overflow-y-auto break-words">{{text_data}}</textarea>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-teal-700 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded">{{button_text}}</button>
+                    </div> 
+                </form>
+                <div id="summary">
+                    <textarea name="summary_text_area" placeholder="This model is still under development. Please ensure to verify the summary generated." type="text"class="mx-2 my-4 pb-96 w-11/12 border border-gray-400 overflow-y-auto break-words">{{summary}}</textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+{% endblock %}
