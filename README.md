@@ -4,7 +4,7 @@ An abstractive text summarization web application that takes English instruction
 *Please be advised that the model is not fully fine-tuned. Hence the tool might produce inaccurate results.* 
 
 To run the application:
-1. Create and switch to a virtual environment
+1. Create and switch to a virtual environment (python >= 3.3.0)
 2. Install requirements
 `pip install -r requirements.txt`
 3. Clone the repository
