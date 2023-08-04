@@ -13,3 +13,5 @@ To run the application:
 5. Execute `python manage.py runserver`
 
 The code for model training can be found in the `bilingual_bart.ipynb` notebook in the `model` folder
+
+![image](https://github.com/RajithaMuthukrishnan/Text_Summarizer_App/assets/57411032/c61dc111-6dfa-44d2-85c2-9c5ba9ee5cc4)
